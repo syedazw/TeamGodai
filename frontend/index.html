@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Team Godai Pakistan</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.png" />
+
+    <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined') {
+            var _fetch = window.fetch;
+            Object.defineProperty(window, 'fetch', {
+              get: function() {
+                return _fetch;
+              },
+              set: function(val) {
+                _fetch = val;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch(e) {
+          try {
+            var proto = Object.getPrototypeOf(window) || window;
+            var _protoFetch = proto.fetch || window.fetch;
+            Object.defineProperty(proto, 'fetch', {
+              get: function() {
+                return _protoFetch;
+              },
+              set: function(val) {
+                _protoFetch = val;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          } catch(err) {
+            console.warn('Failed to define fetch property:', err);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
+

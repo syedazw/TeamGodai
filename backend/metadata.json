@@ -1,0 +1,6 @@
+{
+  "name": "Martial Arts & Sports Training Academy",
+  "description": "A comprehensive Martial Arts and Sports Academy website with dynamic trainer profiles, training schedules, events, and an interactive admin control panel for content management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
