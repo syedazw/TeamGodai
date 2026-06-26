@@ -91,12 +91,12 @@ export let mysqlPool: mysql.Pool | null = null;
 export let useMySQL = false;
 export let mysqlStatusMessage = "MySQL not configured. Starting in Local JSON fallback mode.";
 
-export const mysqlHost = cleanConfigValue(process.env.MYSQL_HOST) || "teamgodaipakistan.com";
+export const mysqlHost = cleanConfigValue(process.env.MYSQL_HOST) || "trolley.proxy.rlwy.net";
 export const mysqlUser = cleanConfigValue(process.env.MYSQL_USER) || "root";
 export const mysqlDatabase = cleanConfigValue(process.env.MYSQL_DATABASE) || "team_godai_pakistan";
 export const mysqlPassword = cleanConfigValue(process.env.MYSQL_PASSWORD) ;
-export const mysqlPort = cleanConfigValue(process.env.MYSQL_PORT) || "45678";
-export const mysqlSSL = cleanConfigValue(process.env.MYSQL_SSL) || "false";
+export const mysqlPort = cleanConfigValue(process.env.MYSQL_PORT) || "37144";
+export const mysqlSSL = cleanConfigValue(process.env.MYSQL_SSL) || "true";
 
 if (mysqlHost && mysqlUser && mysqlDatabase) {
   try {
@@ -106,7 +106,7 @@ if (mysqlHost && mysqlUser && mysqlDatabase) {
       user: mysqlUser,
       password: mysqlPassword,
       database: mysqlDatabase,
-      port: mysqlPort ? parseInt(mysqlPort) : 3306,
+      port: mysqlPort ? parseInt(mysqlPort) : 37144,
       ssl: sslConfig,
       waitForConnections: true,
       connectionLimit: 10,

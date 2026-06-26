@@ -57,8 +57,9 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(Number(PORT), '127.0.0.1', () => {
-  console.log(`🥋 Standalone Martial Arts Headless API Server running and listening on http://127.0.0.1:${PORT}`);
+app.listen(Number(PORT), () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
 
 export default app;
