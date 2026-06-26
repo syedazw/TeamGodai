@@ -335,7 +335,7 @@ export default function App() {
                   <img
                     src={teamGodaiLogo}
                     alt="Team Godai Pakistan Logo"
-                    className="mx-auto w-full h-full object-contain"
+                    className=" w-full h-full object-contain p-2"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -386,7 +386,7 @@ export default function App() {
               <div className="flex flex-col items-center justify-center space-y-2 font-sans font-medium">
                 <p className="flex items-center justify-center space-x-2">
                   <MapPin className="h-4 w-4 text-rose-500 shrink-0" />
-                  <span>House#B21 Row D Block 4, Gulshan-e-Kaniz Fatima Scheme 33, Karachi, Pakistan</span>
+                  <span>House#B21  Row  D  Block  4, Gulshan-e-Kaniz  Fatima  Scheme  33, Karachi, Pakistan</span>
                 </p>
 
                 <p className="flex items-center justify-center space-x-2">

@@ -39,16 +39,16 @@ export default function Navbar({ onViewChange }: NavbarProps) {
         <div className="flex items-center justify-between min-h-[100px]">
           {/* Logo Brand */}
           <div className="flex items-center space-x-2 min-w-0 cursor-pointer" onClick={() => handleNavClick('/')} id="nav-brand">
-            <div className="w-20 h-20 md:w-15 md:h-15 rounded-full overflow-hidden shrink-0 ">
+            <div className="w-25 h-25 md:w-15 md:h-15 rounded-full overflow-hidden shrink-0 ">
               <img 
                 src={teamGodaiLogo} 
                 alt="Team Godai Pakistan Logo" 
-                className="w-full h-full object-contain" 
+                className="w-full h-full object-contain p-2" 
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="min-w-0">
-              <span className="font-display font-bold text-xs md:text-sm tracking-wider text-white block uppercase leading-tight">
+              <span className="font-display font-bold text-xs md:text-sm tracking-wider text-white block uppercase leading-tight gap-5">
                 TEAM GODAI
               </span>
               <span className="text-sm md:text-[20px] font-mono text-rose-500 tracking-widest block uppercase font-bold">

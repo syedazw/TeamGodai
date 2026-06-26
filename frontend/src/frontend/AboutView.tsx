@@ -24,12 +24,12 @@ export default function AboutView() {
     {
       icon: Shield,
       title: 'Practical Safety',
-      description: 'We prioritize safe martial arts forms. We learn locks, leverage, and self-defense tailored to avoid injuries.'
+      description: 'We prioritize safe martial arts forms. We learn locks, leverage, and self defense tailored to avoid injuries.'
     },
     {
       icon: BookOpen,
       title: 'Continuous Mastery',
-      description: 'Martial arts is a lifelong journey. We train for progression, self-mastery, first-generation integrity, and stamina.'
+      description: 'Martial arts is a lifelong journey. We train for progression, self mastery, first generation integrity, and stamina.'
     }
   ];
 
@@ -52,8 +52,8 @@ export default function AboutView() {
           </p>
           
           <p className="text-zinc-400 text-sm leading-relaxed font-sans">
-            Whether you are on our mats to master a perfect high-power Karate stance, Brazilian Jiu-Jitsu guard passes, build kickboxing cardiorespiratory stamina, 
-            or unlock crucial daily self-defense skills, our supportive instructors is with you every step of the way. We create a competitive, yet supportive community.
+            Whether you are on our mats to master a perfect high power Karate stance, Jiu-Jitsu guard passes, build kickboxing cardiorespiratory stamina, 
+            or unlock crucial daily self defense skills, our supportive instructors is with you every step of the way. We create a competitive, yet supportive community.
           </p>
 
           <div className="grid grid-cols-2 gap-4 pt-4">
@@ -212,7 +212,7 @@ export default function AboutView() {
               <span className="text-xs font-mono tracking-wider font-bold text-rose-500">2010 — Roster Expansion</span>
               <p className="text-sm font-semibold text-white mt-1">Elite Specialists onboarding</p>
               <p className="text-xs text-zinc-400 leading-relaxed mt-1">
-                Introduced Brazilian Jiu-Jitsu (BJJ) and professional Muay Thai kickboxing classes under Professor Isabella and Coach Marcus.
+                Introduced Jiu-Jitsu (JJ) and professional Muay Thai kickboxing classes under Professor Isabella and Coach Marcus.
               </p>
             </div>
           </div>
