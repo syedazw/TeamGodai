@@ -91,11 +91,11 @@ export let mysqlPool: mysql.Pool | null = null;
 export let useMySQL = false;
 export let mysqlStatusMessage = "MySQL not configured. Starting in Local JSON fallback mode.";
 
-export const mysqlHost = cleanConfigValue(process.env.MYSQL_HOST) || "localhost";
+export const mysqlHost = cleanConfigValue(process.env.MYSQL_HOST) || "teamgodaipakistan.com";
 export const mysqlUser = cleanConfigValue(process.env.MYSQL_USER) || "root";
 export const mysqlDatabase = cleanConfigValue(process.env.MYSQL_DATABASE) || "team_godai_pakistan";
-export const mysqlPassword = cleanConfigValue(process.env.MYSQL_PASSWORD) || "Azja@1011";
-export const mysqlPort = cleanConfigValue(process.env.MYSQL_PORT) || "3306";
+export const mysqlPassword = cleanConfigValue(process.env.MYSQL_PASSWORD) ;
+export const mysqlPort = cleanConfigValue(process.env.MYSQL_PORT) || "45678";
 export const mysqlSSL = cleanConfigValue(process.env.MYSQL_SSL) || "false";
 
 if (mysqlHost && mysqlUser && mysqlDatabase) {
