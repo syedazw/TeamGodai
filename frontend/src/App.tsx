@@ -438,7 +438,7 @@ export default function App() {
           </div>
 
           <div className="mt-8 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row justify-center text-xs text-zinc-500">
-            <p className='text-center'>&copy; 2026 Team Godai Pakistan Martial Arts & Sports Academy. All Rights Reserved.</p>
+            <p className='text-center'>&copy; 2026 Team Godai Pakistan. All Rights Reserved.</p>
           </div>
         </div>
       </footer>

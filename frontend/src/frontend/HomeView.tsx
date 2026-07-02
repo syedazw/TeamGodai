@@ -32,8 +32,8 @@ export default function HomeView({ events, trainers, onViewChange, onEventClick 
 
   const stats = [
     { value: '35+', label: 'Years Of Experience' },
-    { value: '1,500+', label: 'Active Pupils' },
-    { value: '12', label: 'Gold Champions'},
+    { value: '1000+', label: 'Active Students' },
+    { value: '10+', label: 'Years Of MMA Training' },
     { value: '100%', label: 'Discipline Focus' }
   ];
 
