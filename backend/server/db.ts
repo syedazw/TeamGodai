@@ -94,7 +94,7 @@ export let mysqlStatusMessage = "MySQL not configured. Starting in Local JSON fa
 export const mysqlHost = cleanConfigValue(process.env.MYSQL_HOST) || "trolley.proxy.rlwy.net";
 export const mysqlUser = cleanConfigValue(process.env.MYSQL_USER) || "root";
 export const mysqlDatabase = cleanConfigValue(process.env.MYSQL_DATABASE) || "team_godai_pakistan";
-export const mysqlPassword = cleanConfigValue(process.env.MYSQL_PASSWORD) ;
+export const mysqlPassword = cleanConfigValue(process.env.MYSQL_PASSWORD) || "sjzfMphJruKiElKyOUffjGwTmgfobpUm";
 export const mysqlPort = cleanConfigValue(process.env.MYSQL_PORT) || "37144";
 export const mysqlSSL = cleanConfigValue(process.env.MYSQL_SSL) || "true";
 

@@ -50,6 +50,14 @@ app.use('/api/upload', uploadRouter);
 //   res.json(WEEKLY_SCHEDULE);
 // });
 
+// Health Check Endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    success: true,
+    status: 'OK',
+  });
+});
+
 app.get('/', (req, res) => {
   res.json({
     success: true,

@@ -48,7 +48,7 @@ export default function ContactView({ onAddInquiry }: ContactViewProps) {
       const isLogged = await onAddInquiry({ name, email, phone, program, message });
 
       // 2. Format custom WhatsApp redirect text link
-      const textMessage = `Assalam-o-Alaikum, \n*Name*: ${name}\n*Email*: ${email}\n*Phone*: ${phone || 'N/A'}\n*Program*: ${program}\n\n*Inquiry*: ${message}`;
+      const textMessage = ` ${message}`;
       const encodedText = encodeURIComponent(textMessage);
       // Real WhatsApp API redirection link (using dummy academy contact phone: e.g. 123456789 or custom settings)
       const whatsAppLink = `https://wa.me/923002901998?text=${encodedText}`;
