@@ -32,7 +32,7 @@ export default function App() {
   // Separate Admin layout based on URL route
   const isAdminPortal = location.pathname === '/admin-portal' || location.pathname.startsWith('/admin');
 
-
+  const [Loading, setLoading] = useState(true);
   const [events, setEvents] = useState<EventModel[]>([]);
   const [trainers, setTrainers] = useState<TrainerModel[]>([]);
   const [adminToken, setAdminToken] = useState<string | null>(null);
@@ -59,33 +59,54 @@ export default function App() {
 
   // Fetch initial Events & Trainers from database
   const loadEventsData = async () => {
-    try {
-      const r = await fetch(getApiUrl('/api/events'));
-      if (r.ok) {
-        const list = await r.json();
-        setEvents(list);
+    for (let i = 0; i < 3; i++) { // Retry up to 3 times
+      try {
+        const r = await fetch(getApiUrl('/api/events'));
+        if (r.ok) {
+          const list = await r.json();
+          setEvents(list);
+          return; // Exit if successful
+        }
+      } catch {
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retrying
       }
-    } catch (e) {
-      console.error('Failed fetching events', e);
     }
+    console.error('Failed fetching events after 3 attempts');
   };
+    
 
   const loadTrainersData = async () => {
-    try {
-      const r = await fetch(getApiUrl('/api/trainers'));
-      if (r.ok) {
-        const list = await r.json();
-        setTrainers(list);
+    for (let i = 0; i < 3; i++) { // Retry up to 3 times
+      try {
+        const r = await fetch(getApiUrl('/api/trainers'));
+        if (r.ok) {
+          const list = await r.json();
+          setTrainers(list);
+          return; // Exit if successful
+        }
+      } catch {
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retrying
       }
-    } catch (e) {
-      console.error('Failed fetching trainers', e);
     }
+    console.error('Failed fetching trainers after 3 attempts');
   };
 
   useEffect(() => {
-    loadEventsData();
-    loadTrainersData();
+
+    const initializeData = async () => {
+      setLoading(true);
+
+      try {
+        await fetch(getApiUrl('/health'));
+      } catch (e) {
+        console.log('loading data......');
+      }
+      await Promise.all([loadEventsData(), loadTrainersData()]);
+      setLoading(false);
+    };
+      initializeData();
   }, []);
+
 
   // Admin login trigger
   const handleAdminLogin = async (username: string, pwd: string): Promise<boolean> => {
@@ -297,6 +318,20 @@ export default function App() {
     );
   }
 
+  if (Loading) {
+    return (
+      <div className="flex flex-col min-h-screen bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-red-600 selection:text-white">
+        <div className="flex-grow flex items-center justify-center">
+          <div className="text-center">
+            <Sparkles className="mx-auto mb-4 h-12 w-12 text-rose-500 animate-pulse" />
+            <p className="text-lg font-semibold text-zinc-400">Loading data, please wait...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
+  // Render the main public-facing application
   return (
     
     <div className="flex flex-col min-h-screen bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-red-600 selection:text-white">

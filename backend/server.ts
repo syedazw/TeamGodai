@@ -35,39 +35,48 @@ app.use(cors());
 app.use('/uploads', express.static(UPLOADS_DIR));
 
 // Initialize Database connection / fallbacks and verify schemas
-initializeDatabase();
+async function startServer() {
+  await initializeDatabase();
 
-// Register Separated API Routes
-app.use('/api', authRouter);
-app.use('/api/events', eventsRouter);
-app.use('/api/trainers', trainersRouter);
-app.use('/api/contact', contactRouter);
-app.use('/api/upload', uploadRouter);
+  // Register Separated API Routes
+  app.use('/api', authRouter);
+  app.use('/api/events', eventsRouter);
+  app.use('/api/trainers', trainersRouter);
+  app.use('/api/contact', contactRouter);
+  app.use('/api/upload', uploadRouter);
+
+  // Health Check Endpoint
+  app.get('/health', (req, res) => {
+    res.status(200).json({
+      success: true,
+      status: 'OK',
+    });
+  });
+
+  app.get('/', (req, res) => {
+    res.json({
+      success: true,
+      message: 'Martial Arts API Server Running'
+    });
+  });
+
+  app.listen(Number(PORT), () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+
+  app.listen
+}
+
+// Call the database initialization function
+startServer();
+
+
 
 // Static endpoint to read schedules (read-only helper for calendar)
 // import { WEEKLY_SCHEDULE } from './server/schedule.ts';
 // app.get('/api/schedule', (req, res) => {
 //   res.json(WEEKLY_SCHEDULE);
 // });
-
-// Health Check Endpoint
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    success: true,
-    status: 'OK',
-  });
-});
-
-app.get('/', (req, res) => {
-  res.json({
-    success: true,
-    message: 'Martial Arts API Server Running'
-  });
-});
-
-app.listen(Number(PORT), () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 
 export default app;
